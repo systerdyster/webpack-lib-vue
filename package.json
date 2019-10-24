@@ -1,0 +1,66 @@
+{
+  "name": "@systerdyster/webpack-lib-vue",
+  "version": "1.0.0",
+  "scripts": {
+    "clean": "rimraf dist/*",
+    "start": "npm run clean && webpack --mode development",
+    "test": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} mocha --opts ./mocha.opts 'src/**/__tests__/*.spec.ts'",
+    "test:cover": "cross-env TS_NODE_COMPILER_OPTIONS={\\\"module\\\":\\\"commonjs\\\"} nyc mocha --opts ./mocha.opts 'src/**/__tests__/*.spec.ts'",
+    "version": "npm-check --update"
+  },
+  "author": "Fredrik Gärdin",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/systerdyster/webpack-lib-vue",
+    "type": "git"
+  },
+  "module": "./dist/index.js",
+  "types": "./src/index.d.ts",
+  "files": [
+    "./src/**",
+    "./dist/**"
+  ],
+  "devDependencies": {
+    "cross-env": "^6.0.3",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "html-loader": "^0.5.5",
+    "jsdom": "^15.2.0",
+    "jsdom-global": "^3.0.2",
+    "mini-css-extract-plugin": "^0.8.0",
+    "mocha": "^6.2.2",
+    "node-sass": "^4.13.0",
+    "npm-check": "^5.9.0",
+    "nyc": "^14.1.1",
+    "pug-html-loader": "^1.1.5",
+    "rimraf": "^3.0.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "ts-loader": "^6.2.1",
+    "ts-node": "^8.4.1",
+    "tsconfig-paths": "^3.9.0",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.4",
+    "vue": "^2.6.10",
+    "vue-class-component": "^7.1.0",
+    "vue-property-decorator": "^8.3.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "text"
+    ],
+    "sourceMap": true,
+    "instrument": true
+  }
+}

@@ -1,0 +1,30 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "target": "esnext",
+        "strict": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "strictPropertyInitialization": false,
+        "noImplicitAny": true,
+        "allowUnreachableCode": false,
+        "typeRoots": [
+            "node_modules/@types/"
+        ],
+        "lib": [
+            "dom",
+            "es5",
+            "es2015.promise",
+            "es6"
+        ],
+        "baseUrl": "./src",
+        "paths": {
+        },
+        "declaration": true
+    },
+    "include": [
+        "./src"
+    ],
+    "exclude": ["./node_modules", "./dist"]
+}
